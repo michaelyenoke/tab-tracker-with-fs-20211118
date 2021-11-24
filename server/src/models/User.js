@@ -1,15 +1,9 @@
-const Sequelize = require('sequelize')
-const sequelize = require('./index')
-
-
-const User = sequelize.define('user', {
-    email: {
-      type: Sequelize.STRING,
-      unique:true
-    },
-    password: {
-      type: Sequelize.STRING
-    }
-  })
-
-module.exports = User
+// 這個是輸入 schema 的資料
+module.exports = (sequelize, DataTypes) =>
+    sequelize.define('User', {
+        email:{
+            type:DataTypes.STRING,
+            unique: true 
+        },
+        password: DataTypes.STRING
+    })
